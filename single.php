@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package _s
+ * @package baizonntheme
  */
 
 get_header();
@@ -16,12 +16,12 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content.php', get_post_type() );
+			get_template_part( 'template-parts/content', get_post_type() );
 
 			the_post_navigation(
 				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', '_s' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', '_s' ) . '</span> <span class="nav-title">%title</span>',
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'baizonntheme' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'baizonntheme' ) . '</span> <span class="nav-title">%title</span>',
 				)
 			);
 
