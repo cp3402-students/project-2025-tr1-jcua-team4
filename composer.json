@@ -24,9 +24,9 @@
         "wp-cli/i18n-command": "^2.2.5"
     },
     "scripts": {
-        "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
+        "lint:wpcs": "@php vendor/squizlabs/php_codesniffer/bin/phpcs",
         "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
-        "make-pot": "wp i18n make-pot . languages/_s.pot"
+        "make-pot": "wp i18n make-pot theme languages/_s.pot"
     },
     "support": {
         "issues": "https://github.com/Automattic/_s/issues",
