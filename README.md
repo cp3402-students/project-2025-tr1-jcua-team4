@@ -23,3 +23,4 @@ Welcome to the project! This repository contains the source code and documentati
 
 ## Discord Server
 [Link to Discord Server](https://discord.gg/fE5SWfzQ) - Connect with the team and discuss project-related topics on Discord.
+
