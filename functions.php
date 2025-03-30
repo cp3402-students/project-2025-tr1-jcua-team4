@@ -19,6 +19,8 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
+
+
 function baizonntheme_setup() {
 	add_theme_support( 'title-tag' );
 	register_nav_menus(
