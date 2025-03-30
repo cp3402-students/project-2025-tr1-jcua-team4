@@ -19,8 +19,16 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
+
+
 function baizonntheme_setup() {
-	/*
+	add_theme_support( 'title-tag' );
+	register_nav_menus(
+		array(
+			'primary' => __( 'Primary Menu', 'baizonntheme' ),
+		)
+	);
+}	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
 		* If you're building a theme based on baizonntheme, use a find and replace
@@ -99,7 +107,7 @@ function baizonntheme_setup() {
 			'flex-height' => true,
 		)
 	);
-}
+
 add_action( 'after_setup_theme', 'baizonntheme_setup' );
 
 /**
