@@ -13,6 +13,7 @@
 
 <!-- STEP-2: Add Footer Content To Theme Template -->
 <!-- Include registered widget areas. Ensures the footer contents is displayed on the website -->
+<!-- Also refer to AI disclaimer 1 in functions.php -->
 <footer>
     <div class="footer-widgets">
 		<?php if (is_active_sidebar('footer-widget-1')) : ?>
@@ -23,7 +24,7 @@
     </div>
 
     <div style="background-color: <?php echo get_theme_mod( 'footer_background_color', '#f8f9fa' ); ?>;">
-        <p>&copy; <?php echo date('2025'); ?> BaizonnTheme</p>
+        <p>&copy; <?php echo date('Y'); ?> <?php echo get_bloginfo('name'); ?></p>
         <!-- Customizer Option for Footer Text -->
         <p><?php echo get_theme_mod('footer_text', __('', 'BaizonnTheme')); ?></p>
     </div>
