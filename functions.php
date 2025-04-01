@@ -139,6 +139,17 @@ function baizonntheme_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+
+	// Register footer widget areas
+	register_sidebar( array(
+		'name'          => 'Footer',
+		'id'            => 'footer-widget-1',
+		'before_widget' => '<div class="footer-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	));
 }
 add_action( 'widgets_init', 'baizonntheme_widgets_init' );
 
@@ -179,35 +190,22 @@ Prompt 6: When I add a paragraph section via the widgets editor the text appears
 
 # STEP 1: REGISTER FOOTER WIDGETS
 # Allows users to add widgets like text, images etc. Users will be able to do so in the WordPress interface itself
-function mytheme_widgets_init() {
-	// Register footer widget areas
-	register_sidebar( array(
-		'name'          => 'Footer',
-		'id'            => 'footer-widget-1',
-		'before_widget' => '<div class="footer-widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	));
-
-}
-add_action( 'widgets_init', 'mytheme_widgets_init' );
 
 # STEP-2: See footer.php
 
 # STEP-3: ADD FOOTER CUSTOMISATION OPTIONS
 # Allows users to add custom text, logos and other options via the WordPress customizer
-function mytheme_customize_register( $wp_customize ) {
+function baizonntheme_customize_footer_register( $wp_customize ) {
 	// Add a section for the footer
 	$wp_customize->add_section( 'footer_section', array(
-		'title'       => __( 'Footer Settings', 'mytheme' ),
-		'description' => __( 'Customize the footer content', 'mytheme' ),
+		'title'       => __( 'Footer Settings', 'baizonntheme' ),
+		'description' => __( 'Customize the footer content', 'baizonntheme' ),
 		'priority'    => 160,
 	));
 
 	// Add a setting for footer text
 	$wp_customize->add_setting( 'footer_text', array(
-		'default'           => __( 'Your footer text here', 'mytheme' ),
+		'default'           => __( 'Your footer text here', 'baizonntheme' ),
 		'sanitize_callback' => 'sanitize_text_field',
 	));
 
@@ -219,7 +217,7 @@ function mytheme_customize_register( $wp_customize ) {
 
 	// Add a control to edit footer text
 	$wp_customize->add_control( 'footer_text_control', array(
-		'label'    => __( 'Footer Text', 'mytheme' ),
+		'label'    => __( 'Footer Text', 'baizonntheme' ),
 		'section'  => 'footer_section',
 		'settings' => 'footer_text',
 		'type'     => 'text',
@@ -227,14 +225,14 @@ function mytheme_customize_register( $wp_customize ) {
 
 	// Add colour control
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_background_color_control', array(
-		'label'    => __( 'Footer Background Color', 'mytheme' ),
+		'label'    => __( 'Footer Background Color', 'baizonntheme' ),
 		'section'  => 'colors',
 		'settings' => 'footer_background_color',
 	)));
 }
-add_action( 'customize_register', 'mytheme_customize_register' );
+add_action( 'customize_register', 'baizonntheme_customize_footer_register' );
 
-function mytheme_custom_footer_styles() {
+function baizonntheme_custom_footer_styles() {
 	$footer_bg_color = get_theme_mod( 'footer_background_color', '#f8f9fa' ); // Get the color from the Customizer.
 	echo '<style>
         footer {
@@ -252,7 +250,7 @@ function mytheme_custom_footer_styles() {
         
     </style>';
 }
-add_action( 'wp_head', 'mytheme_custom_footer_styles' );
+add_action( 'wp_head', 'baizonntheme_custom_footer_styles' );
 
 
 
