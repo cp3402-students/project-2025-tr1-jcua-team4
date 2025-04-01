@@ -188,6 +188,33 @@ add_action( 'widgets_init', 'mytheme_widgets_init' );
 
 # STEP-2: See footer.php
 
+# STEP-3: ADD FOOTER CUSTOMISATION OPTIONS
+# Allows users to add custom text, logos and other options via the WordPress customizer
+function mytheme_customize_register( $wp_customize ) {
+	// Add a section for the footer
+	$wp_customize->add_section( 'footer_section', array(
+		'title'       => __( 'Footer Settings', 'mytheme' ),
+		'description' => __( 'Customize the footer content', 'mytheme' ),
+		'priority'    => 160,
+	));
+
+	// Add a setting for footer text
+	$wp_customize->add_setting( 'footer_text', array(
+		'default'           => __( 'Your footer text here', 'mytheme' ),
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	// Add a control to edit footer text
+	$wp_customize->add_control( 'footer_text_control', array(
+		'label'    => __( 'Footer Text', 'mytheme' ),
+		'section'  => 'footer_section',
+		'settings' => 'footer_text',
+		'type'     => 'text',
+	));
+}
+add_action( 'customize_register', 'mytheme_customize_register' );
+
+
 
 /**
  * Implement the Custom Header feature.
