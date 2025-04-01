@@ -190,6 +190,12 @@ how do I get the website title
 
 // Additional Info On Widgets: https://developer.wordpress.org/themes/functionality/widgets/
 
+// DESIGN CHOICE EXPLANATION
+/* The footer has been set up with re-usability in mind so that users of this theme can easily update the footer
+widget within WordPress dashboard rather than having to navigate through the footer file (and manually add any
+details they desire, for example contact information). */
+
+
 // STEP 1: REGISTER FOOTER WIDGETS (steps are in order given)
 // Allows users to add widgets like text, images etc. Users will be able to do so in the WordPress interface itself
 
