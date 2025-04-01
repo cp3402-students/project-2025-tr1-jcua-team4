@@ -166,6 +166,11 @@ Prompt 1: Can I edit the footer in WordPress editor and not on the page itself?
 Prompt 2: I'm looking in Appearance->Themes->MyTheme(I pressed the customized button for it) and there's no option
 for a footer, is there a setting I need to change
 Prompt 4: No im creating my own custom theme
+Prompt 5: In a previous conversation these were the steps you gave me:
+1. Set Up Basic Footer in Theme
+2: Add Footer Widgets (Optional)
+3: Add Customizer Options for Footer Text (Basic Customization)
+4: Add Custom Footer Background Color (Optional)
 */
 
 # Additional Info On Widgets: https://developer.wordpress.org/themes/functionality/widgets/
@@ -204,6 +209,12 @@ function mytheme_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_text_field',
 	));
 
+	// Change background colour
+	$wp_customize->add_setting( 'footer_background_color', array(
+		'default'   => '#000000',
+		'transport' => 'refresh',
+	));
+
 	// Add a control to edit footer text
 	$wp_customize->add_control( 'footer_text_control', array(
 		'label'    => __( 'Footer Text', 'mytheme' ),
@@ -211,6 +222,13 @@ function mytheme_customize_register( $wp_customize ) {
 		'settings' => 'footer_text',
 		'type'     => 'text',
 	));
+
+	// Add colour control
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_background_color_control', array(
+		'label'    => __( 'Footer Background Color', 'mytheme' ),
+		'section'  => 'colors',
+		'settings' => 'footer_background_color',
+	)));
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
 
