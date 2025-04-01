@@ -171,6 +171,8 @@ Prompt 5: In a previous conversation these were the steps you gave me:
 2: Add Footer Widgets (Optional)
 3: Add Customizer Options for Footer Text (Basic Customization)
 4: Add Custom Footer Background Color (Optional)
+Prompt 6: When I add a paragraph section via the widgets editor the text appears outside the footer
+(I can tell because it has no grey background around it like the rest of the footer)
 */
 
 # Additional Info On Widgets: https://developer.wordpress.org/themes/functionality/widgets/
@@ -231,6 +233,26 @@ function mytheme_customize_register( $wp_customize ) {
 	)));
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
+
+function mytheme_custom_footer_styles() {
+	$footer_bg_color = get_theme_mod( 'footer_background_color', '#f8f9fa' ); // Get the color from the Customizer.
+	echo '<style>
+        footer {
+            background-color: ' . esc_html( $footer_bg_color ) . ';
+            text-align: center;
+        }
+        
+        .footer-widget-area {
+        	text-align: center;
+        }
+        
+        footer div p {
+        	text-align: center;
+        }
+        
+    </style>';
+}
+add_action( 'wp_head', 'mytheme_custom_footer_styles' );
 
 
 

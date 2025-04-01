@@ -25,7 +25,7 @@
     <div style="background-color: <?php echo get_theme_mod( 'footer_background_color', '#f8f9fa' ); ?>;">
         <p>&copy; <?php echo date('2025'); ?> BaizonnTheme</p>
         <!-- Customizer Option for Footer Text -->
-        <p><?php echo get_theme_mod('footer_text', __('hello there', 'BaizonnTheme')); ?></p>
+        <p><?php echo get_theme_mod('footer_text', __('', 'BaizonnTheme')); ?></p>
     </div>
 </footer>
 
