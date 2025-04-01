@@ -14,6 +14,14 @@
 <!-- STEP-2: Add Footer Content To Theme Template -->
 <!-- Include registered widget areas. Ensures the footer contents is displayed on the website -->
 <footer>
+    <div class="footer-widgets">
+		<?php if (is_active_sidebar('footer-widget-1')) : ?>
+            <div class="footer-widget-area">
+				<?php dynamic_sidebar('footer-widget-1'); ?>
+            </div>
+		<?php endif; ?>
+    </div>
+
     <div class="footer-info">
         <p>&copy; <?php echo date('2025'); ?> BaizonnTheme</p>
         <!-- Customizer Option for Footer Text -->

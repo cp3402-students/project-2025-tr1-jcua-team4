@@ -157,6 +157,38 @@ function baizonntheme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'baizonntheme_scripts' );
 
+
+###------------- THIS IS CODE FOR ADDING FOOTER WIDGET CUSTOMISATION OPTIONS ----------------###
+# AI DISCLAIMER: The following contains AI generated code for adding footer customisation (logo, text, etc.)!
+
+/*
+Prompt 1: Can I edit the footer in WordPress editor and not on the page itself?
+Prompt 2: I'm looking in Appearance->Themes->MyTheme(I pressed the customized button for it) and there's no option
+for a footer, is there a setting I need to change
+Prompt 4: No im creating my own custom theme
+*/
+
+# Additional Info On Widgets: https://developer.wordpress.org/themes/functionality/widgets/
+
+# STEP 1: REGISTER FOOTER WIDGETS
+# Allows users to add widgets like text, images etc. Users will be able to do so in the WordPress interface itself
+function mytheme_widgets_init() {
+	// Register footer widget areas
+	register_sidebar( array(
+		'name'          => 'Footer',
+		'id'            => 'footer-widget-1',
+		'before_widget' => '<div class="footer-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	));
+
+}
+add_action( 'widgets_init', 'mytheme_widgets_init' );
+
+# STEP-2: See footer.php
+
+
 /**
  * Implement the Custom Header feature.
  */
