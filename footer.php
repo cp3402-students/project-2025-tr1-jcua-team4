@@ -11,24 +11,14 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'baizonntheme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'baizonntheme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'baizonntheme' ), 'baizonntheme', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<!-- STEP-2: Add Footer Content To Theme Template -->
+<!-- Include registered widget areas. Ensures the footer contents is displayed on the website -->
+<footer>
+    <div class="footer-info">
+        <p>&copy; <?php echo date('2025'); ?> BaizonnTheme</p>
+        <!-- Customizer Option for Footer Text -->
+        <p><?php echo get_theme_mod('footer_text', __('Your footer text here', 'BaizonnTheme')); ?></p>
+    </div>
+</footer>
 
 <?php wp_footer(); ?>
-
-</body>
-</html>
