@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+    - main
+    - staging
+    - release/*
+
+jobs:
+  my_job:
+    name: deploy to staging
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: code checkout
+      - uses: actions/checkout@v4
+
+# Reference: https://docs.github.com/en/actions
+
+      - name: FTP Deploy To CloudAccess Host.net
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: baizonnlearningcenter.cloudaccess.host
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          secure: false # Cloud access does not support SFTP/SSH until upgrade!
+
+
+# Reference: https://github.com/SamKirkland/FTP-Deploy-Action
+
