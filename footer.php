@@ -11,24 +11,23 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'baizonntheme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'baizonntheme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'baizonntheme' ), 'baizonntheme', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<!-- STEP-2: Add Footer Content To Theme Template -->
+<!-- Include registered widget areas. Ensures the footer contents is displayed on the website -->
+<!-- Also refer to AI disclaimer 1 in functions.php -->
+<footer>
+    <div class="footer-widgets">
+		<?php if (is_active_sidebar('footer-widget-1')) : ?>
+            <div class="footer-widget-area">
+				<?php dynamic_sidebar('footer-widget-1'); ?>
+            </div>
+		<?php endif; ?>
+    </div>
+
+    <div style="background-color: <?php echo get_theme_mod( 'footer_background_color', '#f8f9fa' ); ?>;">
+        <p>&copy; <?php echo date('Y'); ?> <?php echo get_bloginfo('name'); ?></p>
+        <!-- Customizer Option for Footer Text -->
+        <p><?php echo get_theme_mod('footer_text', __('', 'BaizonnTheme')); ?></p>
+    </div>
+</footer>
 
 <?php wp_footer(); ?>
-
-</body>
-</html>
