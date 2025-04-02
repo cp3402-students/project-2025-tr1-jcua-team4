@@ -17,16 +17,21 @@
 <?php wp_body_open(); ?>
 
 <header class="site-header" style="text-align: center; padding: 2rem 0; background-color: #f8f9fa;">
-	<div class="site-branding">
-		<h1 class="site-title" style="margin: 0;">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" style="text-decoration: none; color: #333;">
-				<?php bloginfo( 'name' ); ?>
-			</a>
-		</h1>
-		<p class="site-description" style="margin-top: 0.5rem; color: #666;">
-			Nurturing a Love for Learning in Maths & Science
-		</p>
-	</div>
+    <div class="site-branding">
+        <?php if (function_exists('the_custom_logo') && has_custom_logo()) : ?>
+            <?php the_custom_logo(); ?>
+        <?php else : ?>
+            <h1 class="site-title" style="margin: 0;">
+                <a href="<?php echo esc_url(home_url('/')); ?>" style="text-decoration: none; color: #333;">
+                    <?php bloginfo('name'); ?>
+                </a>
+            </h1>
+        <?php endif; ?>
+
+        <p class="site-description" style="margin-top: 0.5rem; color: #666;">
+            Nurturing a Love for Learning in Maths & Science
+        </p>
+    </div>
 
 	<nav class="main-navigation" style="margin-top: 1rem;">
 		<?php
