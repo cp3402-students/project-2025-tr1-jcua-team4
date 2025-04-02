@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: code checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
 # Reference: https://docs.github.com/en/actions
 
