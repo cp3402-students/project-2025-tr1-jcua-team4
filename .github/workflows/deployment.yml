@@ -22,9 +22,9 @@ jobs:
           server: baizonnlearningcenter.cloudaccess.host
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./wp-content/themes/baizonntheme/ # Folder to upload from (in this case our theme)
-          server-dir: ./public_html/wp-content/themes/baizonntheme/ # Folder to upload to
-          secure: false # Cloud access does not support SFTP/SSH until plan upgrade!
+          local-dir: ./ # Folder to upload from (in this case our theme, workflow is in same folder as theme)
+          server-dir: ./public_html/wp-content/themes/ # Folder to upload to
+          security: false # Cloud access does not support SFTP/SSH until plan upgrade!
 
 
 # Reference: https://github.com/SamKirkland/FTP-Deploy-Action (SamKirkland, FTP-Deploy-Action)
