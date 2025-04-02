@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./ # Folder to upload from (in this case our theme, workflow is in same folder as theme)
-          server-dir: ./public_html/wp-content/themes/ # Folder to upload to
+          server-dir: ./httpdocs/wp-content/themes/baizonntheme/ # Folder to upload to
           security: loose # Cloud access does not support SFTP/SSH until plan upgrade!
 
 
