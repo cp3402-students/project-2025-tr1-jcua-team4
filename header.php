@@ -16,29 +16,31 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="site-header" style="text-align: center; padding: 2rem 0; background-color: #f8f9fa;">
-	<div class="site-branding">
-		<h1 class="site-title" style="margin: 0;">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" style="text-decoration: none; color: #333;">
-				<?php bloginfo( 'name' ); ?>
-			</a>
-		</h1>
-		<p class="site-description" style="margin-top: 0.5rem; color: #666;">
-			Nurturing a Love for Learning in Maths & Science
-		</p>
-	</div>
+<header class="site-header">
+  <div class="container">
+    <div class="branding">
+      <h1 class="site-title">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+          <?php bloginfo( 'name' ); ?>
+        </a>
+      </h1>
+      <p class="site-description">
+        Nurturing a Love for Learning in Maths & Science
+      </p>
+    </div>
 
-	<nav class="main-navigation" style="margin-top: 1rem;">
-		<?php
-		wp_nav_menu(
-			array(
-				'theme_location' => 'primary',
-				'menu_class'     => 'nav-menu',
-				'container'      => false,
-			)
-		);
-		?>
-	</nav>
+    <nav class="main-navigation">
+      <ul class="nav-menu">
+        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/program' ) ); ?>">Program</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/schedule' ) ); ?>">Schedule</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/staff' ) ); ?>">Staff</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
+
 
 <div id="content" class="site-content">

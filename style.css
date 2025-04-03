@@ -967,3 +967,83 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+/* === Container Layout === */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+  }
+  
+  /* === Site Header === */
+  .site-header {
+	background: linear-gradient(135deg, #f8f9fa, #e0f7fa);
+	padding: 1.5rem 0;
+	border-bottom: 2px solid #0073aa;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* === Branding === */
+  .branding {
+	flex: 1;
+  }
+  
+  .site-title a {
+	text-decoration: none;
+	color: #0073aa;
+	font-size: 2rem;
+	font-weight: 700;
+  }
+  
+  .site-description {
+	margin: 0.25rem 0 0;
+	color: #555;
+	font-size: 1rem;
+	font-style: italic;
+  }
+  
+  /* === Navigation === */
+  .main-navigation {
+	flex: 1;
+	text-align: right;
+  }
+  
+  .nav-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: inline-flex;
+	gap: 1.5rem;
+  }
+  
+  .nav-menu li a {
+	text-decoration: none;
+	color: #333;
+	font-weight: 600;
+	position: relative;
+	transition: color 0.3s ease;
+  }
+  
+  .nav-menu li a::after {
+	content: '';
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	left: 0;
+	bottom: -4px;
+	background-color: #0073aa;
+	transition: 0.3s;
+  }
+  
+  .nav-menu li a:hover {
+	color: #0073aa;
+  }
+  
+  .nav-menu li a:hover::after {
+	width: 100%;
+  }
+  
