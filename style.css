@@ -967,25 +967,3 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
-
-.main-navigation {
-	background: #333;
-}
-
-.main-navigation ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
-}
-
-.main-navigation li {
-	margin: 0;
-}
-
-.main-navigation a {
-	color: #fff;
-	padding: 1em;
-	display: block;
-	text-decoration: none;
-}
