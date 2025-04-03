@@ -18,16 +18,21 @@
 
 <header class="site-header">
   <div class="container">
-    <div class="branding">
-      <h1 class="site-title">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-          <?php bloginfo( 'name' ); ?>
-        </a>
-      </h1>
-      <p class="site-description">
-        Nurturing a Love for Learning in Maths & Science
-      </p>
-    </div>
+      <div class="branding">
+          <?php if (function_exists('the_custom_logo') && has_custom_logo()) : ?>
+              <?php the_custom_logo(); ?>
+          <?php else : ?>
+              <h1 class="site-title">
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                      <?php bloginfo( 'name' ); ?>
+                  </a>
+              </h1>
+          <?php endif; ?>
+
+          <p class="site-description">
+              Nurturing a Love for Learning in Maths & Science
+          </p>
+      </div>
 
     <nav class="main-navigation">
       <ul class="nav-menu">
