@@ -1021,6 +1021,7 @@ textarea {
   }
   
   .nav-menu li a {
+	font-size: 18px;
 	text-decoration: none;
 	color: #333;
 	font-weight: 600;
@@ -1046,4 +1047,9 @@ textarea {
   .nav-menu li a:hover::after {
 	width: 100%;
   }
-  
+
+.custom-logo {
+	max-height: 90px;  /* Adjust as needed */
+	height: 250px;
+	width: 340px;
+}
