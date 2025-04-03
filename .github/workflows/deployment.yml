@@ -2,8 +2,14 @@ on:
   push:
     branches:
     - main
-    - staging
     - release/*
+
+  pull_request:
+    types: [closed]
+    branches:
+    - main
+    - release/*
+     
 
 jobs:
   my_job:
