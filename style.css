@@ -967,3 +967,41 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+.site-footer {
+	background-color: #e6f7fa; /* light blue to match header */
+	border-top: 2px solid #00aaff; /* blue line to match header bottom */
+	padding: 2rem;
+	text-align: center;
+	color: #333;
+	font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-branding .footer-text {
+	font-weight: bold;
+	margin: 0;
+}
+
+.footer-menu {
+	list-style: none;
+	padding: 0;
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.footer-menu li {
+	position: relative;
+}
+
+.footer-menu a {
+	text-decoration: none;
+	color: #333;
+	padding: 0.5rem 0;
+	display: inline-block;
+	position: relative;
+	transition: color 0.3s ease-in-out;
+}
+
+
