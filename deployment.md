@@ -43,18 +43,24 @@ Local development is done by using LocalWP and git. LocalWP is used to install W
    - See documentation [here](https://www.jetbrains.com/phpstorm/resources/)
 2. Download and install [GitHub Desktop](https://desktop.github.com/download/)
    - See documentation [here](https://docs.github.com/en/desktop/overview/about-github-desktop)
-3. Open GitHub desktop and log in with a GitHub account
-4. On LocalWP click __Site Folder__ and go to app > public > wp-content > themes 
-5. Drag the __baizonntheme__ folder on to GitHub desktop (This will add the local repository we cloned earlier to GitHub Desktop)
-6. On the top bar click __fetch__ to update the repository from remote 
-7. On LocalWP click __Site Folder__ and go to app > public
-8. Right click public and click __Open Folder as PHPStorm Project__
-9. Make any changes to the theme files in PHP Storm.
-10. Once a change is made to the theme files, it will show up on GitHub Desktop under changes
-11. Commit the changes and push to remote on GitHub Desktop
+3. On LocalWP click __Site Folder__ and go to app > public > wp-content > themes 
+4. Drag the __baizonntheme__ folder on to GitHub desktop (This will add the local repository we cloned earlier to GitHub Desktop)
+5. On the top bar click __fetch__ to update the repository from remote 
+6. Click on the current branch and create a new branch 
+7. name the new branch with the feature or changes that need to be added and check out the branch
+8. On LocalWP click __Site Folder__ and go to app > public
+9. Right click public and click __Open Folder as PHPStorm Project__
+10. Make any changes to the theme files in PHP Storm.
+11. Head over to the local WordPress site and reload to see the changes
+12. Once a change is made to the theme files, it will show up on GitHub Desktop under changes
+13. Commit the changes and push to remote on GitHub Desktop
+14. On GitHub create a pull request and merge the branch to main
+15. Repeat steps 6, 7 and 10–14 when adding new features or making changes to the theme files
 
 ## Setting up staging
+Staging is set up in a server on cloud access.net.
+GitHub actions are used to automate the workflow
+and push the theme changes to WordPress upon merging and pushing to the main repository.
 
 ### Setting up automated workflow
 
-1. 
