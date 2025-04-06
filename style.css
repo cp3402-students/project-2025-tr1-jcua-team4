@@ -1018,8 +1018,8 @@ textarea {
 	margin: 0;
 	display: inline-flex;
 	gap: 1.5rem;
-}
-
+  }
+  
 .nav-menu li a {
 	font-size: 18px;
 	text-decoration: none;
@@ -1102,4 +1102,10 @@ textarea {
 
 .footer-menu a:hover::after {
 	width: 100%;
+}
+
+.custom-logo {
+	max-height: 90px;  /* Adjust as needed */
+	height: 250px;
+	width: 340px;
 }

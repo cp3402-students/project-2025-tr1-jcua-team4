@@ -18,27 +18,31 @@
 
 <header class="site-header">
   <div class="container">
-    <div class="branding">
-      <h1 class="site-title">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-          <?php bloginfo( 'name' ); ?>
-        </a>
-      </h1>
-      <p class="site-description">
-        Nurturing a Love for Learning in Maths & Science
-      </p>
-    </div>
+      <div class="branding">
+          <?php if (function_exists('the_custom_logo') && has_custom_logo()) : ?>
+              <?php the_custom_logo(); ?>
+          <?php else : ?>
+              <h1 class="site-title">
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                      <?php bloginfo( 'name' ); ?>
+                  </a>
+              </h1>
+          <?php endif; ?>
 
-    <nav class="main-navigation">
-      <ul class="nav-menu">
-        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/program' ) ); ?>">Program</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/schedule' ) ); ?>">Schedule</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/staff' ) ); ?>">Staff</a></li>
-      </ul>
-    </nav>
+          <p class="site-description">
+              Nurturing a Love for Learning in Maths & Science
+          </p>
+      </div>
+
+      <nav class="main-navigation">
+          <?php
+          wp_nav_menu(array(
+              'theme_location' => 'primary',
+              'menu_class'     => 'nav-menu',
+              'container'      => false,
+          ));
+          ?>
+      </nav>
   </div>
 </header>
 
