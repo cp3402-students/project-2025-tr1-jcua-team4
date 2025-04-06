@@ -14,19 +14,30 @@
 <!-- STEP-2: Add Footer Content To Theme Template -->
 <!-- Include registered widget areas. Ensures the footer contents is displayed on the website -->
 <!-- Also refer to AI disclaimer 1 in functions.php -->
-<footer>
-    <div class="footer-widgets">
-		<?php if (is_active_sidebar('footer-widget-1')) : ?>
+<footer class="site-footer">
+    <div class="container footer-widgets">
+        <?php if (is_active_sidebar('footer-widget-1')) : ?>
             <div class="footer-widget-area">
-				<?php dynamic_sidebar('footer-widget-1'); ?>
+                <?php dynamic_sidebar('footer-widget-1'); ?>
             </div>
-		<?php endif; ?>
+        <?php endif; ?>
     </div>
 
-    <div style="background-color: <?php echo get_theme_mod( 'footer_background_color', '#f8f9fa' ); ?>;">
-        <p>&copy; <?php echo date('Y'); ?> <?php echo get_bloginfo('name'); ?></p>
-        <!-- Customizer Option for Footer Text -->
-        <p><?php echo get_theme_mod('footer_text', __('', 'BaizonnTheme')); ?></p>
+    <nav class="footer-nav">
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'footer',
+            'menu_class'     => 'footer-menu',
+        ));
+        ?>
+    </nav>
+
+    <div class="footer-bottom" style="background-color: <?php echo get_theme_mod('footer_background_color', '#e6f7fa'); ?>;">
+        <p class="footer-copy">
+            &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>
+        </p>
+        <p class="footer-text">
+        </p>
     </div>
 </footer>
 

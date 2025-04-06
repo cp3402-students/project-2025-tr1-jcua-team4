@@ -977,42 +977,42 @@ textarea {
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
-  }
-  
-  /* === Site Header === */
-  .site-header {
+}
+
+/* === Site Header === */
+.site-header {
 	background: linear-gradient(135deg, #f8f9fa, #e0f7fa);
 	padding: 1.5rem 0;
 	border-bottom: 2px solid #0073aa;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* === Branding === */
-  .branding {
+}
+
+/* === Branding === */
+.branding {
 	flex: 1;
-  }
-  
-  .site-title a {
+}
+
+.site-title a {
 	text-decoration: none;
 	color: #0073aa;
 	font-size: 2rem;
 	font-weight: 700;
-  }
-  
-  .site-description {
+}
+
+.site-description {
 	margin: 0.25rem 0 0;
 	color: #555;
 	font-size: 1rem;
 	font-style: italic;
-  }
-  
-  /* === Navigation === */
-  .main-navigation {
+}
+
+/* === Navigation === */
+.main-navigation {
 	flex: 1;
 	text-align: right;
-  }
-  
-  .nav-menu {
+}
+
+.nav-menu {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -1020,16 +1020,16 @@ textarea {
 	gap: 1.5rem;
   }
   
-  .nav-menu li a {
+.nav-menu li a {
 	font-size: 18px;
 	text-decoration: none;
 	color: #333;
 	font-weight: 600;
 	position: relative;
 	transition: color 0.3s ease;
-  }
-  
-  .nav-menu li a::after {
+}
+
+.nav-menu li a::after {
 	content: '';
 	position: absolute;
 	width: 0%;
@@ -1038,15 +1038,71 @@ textarea {
 	bottom: -4px;
 	background-color: #0073aa;
 	transition: 0.3s;
-  }
-  
-  .nav-menu li a:hover {
+}
+
+.nav-menu li a:hover {
 	color: #0073aa;
-  }
-  
-  .nav-menu li a:hover::after {
+}
+
+.nav-menu li a:hover::after {
 	width: 100%;
-  }
+}
+
+/* === Footer === */
+.site-footer {
+	background-color: #e6f7fa; /* light blue to match header */
+	border-top: 2px solid #00aaff; /* blue line to match header bottom */
+	padding: 5px;
+	text-align: center;
+	color: #333;
+	font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-branding .footer-text {
+	font-weight: bold;
+	margin: 0;
+}
+
+.footer-menu {
+	list-style: none;
+	padding: 0;
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.footer-menu li {
+	position: relative;
+}
+
+.footer-menu a {
+	text-decoration: none;
+	color: #333;
+	padding: 0.5rem 0;
+	display: inline-block;
+	position: relative;
+	transition: color 0.3s ease-in-out;
+}
+
+.footer-menu a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2px;
+	width: 0%;
+	background-color: #0073aa; /* underline color */
+	transition: width 0.3s ease-in-out;
+}
+
+.footer-menu a:hover {
+	color: #0073aa; /* text hover color */
+}
+
+.footer-menu a:hover::after {
+	width: 100%;
+}
 
 .custom-logo {
 	max-height: 90px;  /* Adjust as needed */
