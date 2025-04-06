@@ -23,21 +23,21 @@
         <?php endif; ?>
     </div>
 
-    <nav class="footer-nav">
-        <?php
-        wp_nav_menu(array(
-            'theme_location' => 'footer',
-            'menu_class'     => 'footer-menu',
-        ));
-        ?>
-    </nav>
-
     <div class="footer-bottom" style="background-color: <?php echo get_theme_mod('footer_background_color', '#e6f7fa'); ?>;">
-        <p class="footer-copy">
-            &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>
-        </p>
-        <p class="footer-text">
-        </p>
+        <div class="footer-bar">
+            <nav class="footer-nav">
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'footer',
+                    'menu_class'     => 'footer-menu',
+                ));
+                ?>
+            </nav>
+
+            <div class="footer-copy">
+                &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>
+            </div>
+        </div>
     </div>
 </footer>
 
