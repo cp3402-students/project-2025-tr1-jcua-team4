@@ -51,7 +51,7 @@ jobs:
       - name: FTP Deploy To CloudAccess Host.net
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: baizonnlearningcenter.cloudaccess.host
+          server: baizonn-learning-center.cloudaccess.host
           username: ${{ secrets.FTP_PROD_USERNAME }}
           password: ${{ secrets.FTP_PROD_PASSWORD }}
           local-dir: ./ # Folder to upload from (in this case our theme, workflow is in same folder as theme)
