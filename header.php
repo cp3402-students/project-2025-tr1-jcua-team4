@@ -28,10 +28,6 @@
                   </a>
               </h1>
           <?php endif; ?>
-
-          <p class="site-description">
-              Nurturing a Love for Learning in Maths & Science
-          </p>
       </div>
 
       <nav class="main-navigation">
