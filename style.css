@@ -971,7 +971,7 @@ textarea {
 .site-footer {
 	background-color: #e6f7fa; /* light blue to match header */
 	border-top: 2px solid #00aaff; /* blue line to match header bottom */
-	padding: 2rem;
+	padding: 5px;
 	text-align: center;
 	color: #333;
 	font-family: 'Segoe UI', sans-serif;
