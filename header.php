@@ -37,6 +37,8 @@
         <li><a href="<?php echo esc_url( home_url( '/program' ) ); ?>">Program</a></li>
         <li><a href="<?php echo esc_url( home_url( '/schedule' ) ); ?>">Schedule</a></li>
         <li><a href="<?php echo esc_url( home_url( '/staff' ) ); ?>">Staff</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/calendar' ) ); ?>">Calendar</a></li>
+
       </ul>
     </nav>
   </div>
