@@ -1066,10 +1066,9 @@ textarea {
 .footer-menu {
 	list-style: none;
 	padding: 0;
-	margin-top: 1rem;
+	margin: 0;
 	display: flex;
-	justify-content: center;
-	gap: 1.5rem;
+	gap: 2rem;
 }
 
 .footer-menu li {
@@ -1108,4 +1107,26 @@ textarea {
 	max-height: 90px;  /* Adjust as needed */
 	height: 250px;
 	width: 340px;
+}
+
+.footer-bottom {
+	padding: 1rem 2rem;
+}
+
+.footer-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.footer-menu li {
+	list-style: none;
+}
+
+.footer-copy {
+	white-space: nowrap;
+	font-size: 0.95rem;
+	color: #333;
 }
