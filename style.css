@@ -1004,4 +1004,21 @@ textarea {
 	transition: color 0.3s ease-in-out;
 }
 
+.footer-menu a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2px;
+	width: 0%;
+	background-color: #0073aa; /* underline color */
+	transition: width 0.3s ease-in-out;
+}
 
+.footer-menu a:hover {
+	color: #0073aa; /* text hover color */
+}
+
+.footer-menu a:hover::after {
+	width: 100%;
+}
