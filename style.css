@@ -1241,4 +1241,20 @@ textarea {
   .entry-title {
 	display: none;
   }
-  
+
+/* === General Theme === */
+.page-container {
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+}
+
+.entry-title {
+	font-size: 2rem;
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+.entry-content {
+	line-height: 1.7;
+}
