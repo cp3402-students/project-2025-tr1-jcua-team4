@@ -165,24 +165,6 @@ add_action( 'wp_enqueue_scripts', 'baizonntheme_scripts' );
 
 
 ###------------- THIS IS CODE FOR ADDING FOOTER WIDGET CUSTOMISATION OPTIONS ----------------###
-// AI DISCLAIMER 1: The following contains AI generated code for adding footer customisation (logo, text, etc.)!
-
-/*
-Prompt 1: Can I edit the footer in WordPress editor and not on the page itself?
-Prompt 2: I'm looking in Appearance->Themes->MyTheme(I pressed the customized button for it) and there's no option
-for a footer, is there a setting I need to change
-Prompt 3: No im creating my own custom theme
-Prompt 4: In a previous conversation these were the steps you gave me:
-1. Set Up Basic Footer in Theme
-2: Add Footer Widgets (Optional)
-3: Add Customizer Options for Footer Text (Basic Customization)
-4: Add Custom Footer Background Color (Optional)
-Prompt 5: When I add a paragraph section via the widgets editor the text appears outside the footer
-(I can tell because it has no grey background around it like the rest of the footer)
-Prompt 6: In this section of code: <p>&copy; <?php echo date('Y'); ?> My Custom Theme</p>
-how do I get the website title
-*/
-
 // Additional Info On Widgets: https://developer.wordpress.org/themes/functionality/widgets/
 
 // DESIGN CHOICE EXPLANATION

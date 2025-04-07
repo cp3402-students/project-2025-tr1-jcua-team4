@@ -13,7 +13,6 @@
 
 <!-- STEP-2: Add Footer Content To Theme Template -->
 <!-- Include registered widget areas. Ensures the footer contents is displayed on the website -->
-<!-- Also refer to AI disclaimer 1 in functions.php -->
 <footer class="site-footer">
     <div class="container footer-widgets">
         <?php if (is_active_sidebar('footer-widget-1')) : ?>
