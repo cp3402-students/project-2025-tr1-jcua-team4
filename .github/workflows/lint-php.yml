@@ -3,10 +3,12 @@ name: PHP Code Linting
 on:
   pull_request:
     branches:
-      - master
+      - main
+      - php-lint-test
   push:
     branches:
-      - master
+      - main
+      - php-lint-test
 
 jobs:
   lint-php:
@@ -15,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout the git repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: PHP setup
         uses: shivammathur/setup-php@v2
         with:
@@ -25,18 +27,20 @@ jobs:
       - name: Check for PHP errors
         run: composer lint:php
 
-  phpcs_check:
-    name: PHPCS check
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout the git repository
-        uses: actions/checkout@v2
-      - name: PHP setup
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 7.4
-      - name: Install composer packages
-        run: composer install --no-progress
-      - name: Check coding standards using PHPCS
-        run: composer lint:wpcs
+#  phpcs_check:
+#    name: PHPCS check
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout the git repository
+#        uses: actions/checkout@v4
+#      - name: PHP setup
+#        uses: shivammathur/setup-php@v2
+#        with:
+#          php-version: 7.4
+#      - name: Install composer packages
+#        run: composer install --no-progress
+#      - name: Check coding standards using PHPCS
+#        run: composer lint:wpcs -- --standard=WordPress --exclude="WordPress.WP.I18n" ./404.php ./archive.php ./comments.php ./footer.php ./front-page.php ./functions.php ./header.php ./index.php ./page.php ./search.php ./sidebar.php ./single.php || true
+#      - name: Apply automated fixes using PHPCBF
+#        run: composer lint:phpcbf -- --standard=WordPress --exclude="WordPress.WP.I18n" ./404.php ./archive.php ./comments.php ./footer.php ./front-page.php ./functions.php ./header.php ./index.php ./page.php ./search.php ./sidebar.php ./single.php

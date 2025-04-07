@@ -7,9 +7,9 @@
  * @package baizonntheme
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'BAIZONNTHEME_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'BAIZONNTHEME_VERSION', '1.0.0' );
 }
 
 /**
