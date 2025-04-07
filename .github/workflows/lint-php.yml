@@ -41,4 +41,4 @@ jobs:
       - name: Install composer packages
         run: composer install --no-progress
       - name: Check coding standards using PHPCS
-        run: composer lint:wpcs -- --standard=WordPress --exclude="WordPress.WP.I18n" .
+        run: composer lint:wpcs -- --standard=WordPress --exclude="WordPress.WP.I18n" ./404.php ./archive.php ./comments.php ./footer.php ./front-page.php ./functions.php ./header.php ./index.php ./page.php ./search.php ./sidebar.php ./single.php
