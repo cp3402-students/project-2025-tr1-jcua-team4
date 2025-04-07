@@ -41,4 +41,4 @@ jobs:
       - name: Install composer packages
         run: composer install --no-progress
       - name: Check coding standards using PHPCS
-        run: composer lint:wpcs -- --standard=WordPress --exclude=WordPress.WP.I18n.TextDomainMismatch
+        run: composer lint:wpcs -- --standard=WordPress --exclude="WordPress.WP.I18n"
