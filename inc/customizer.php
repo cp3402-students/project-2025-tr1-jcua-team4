@@ -56,6 +56,12 @@ function baizonntheme_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function baizonntheme_customize_preview_js() {
-	wp_enqueue_script( 'baizonntheme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
+    wp_enqueue_script(
+        'baizonntheme-customizer',
+        get_template_directory_uri() . '/js/customizer.js',
+        array( 'customize-preview' ),
+        '1.0.0',
+        true
+    );
 }
 add_action( 'customize_preview_init', 'baizonntheme_customize_preview_js' );
