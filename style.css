@@ -1433,3 +1433,18 @@ textarea {
 	background-color: #0073aa;
 	color: #fff;
 }
+
+/* === About us page === */
+.fast-method {
+	display: flex;
+	align-items: flex-start;
+	gap: 20px;
+	flex-wrap: wrap;
+  }
+  
+  .fast-method .fast-image {
+	max-width: 300px;
+	height: auto;
+	border-radius: 10px;
+  }
+  
