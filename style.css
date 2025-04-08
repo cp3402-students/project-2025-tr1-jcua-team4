@@ -1402,5 +1402,34 @@ textarea {
 	padding-top: 0 !important;
 	margin-top: 0 !important;
 }
-
-  
+/* === Dropdown Submenu Footer === */
+.footer-menu ul.sub-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: #ffffff;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	min-width: 200px;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+	z-index: 999;
+}
+.footer-menu li:hover > .sub-menu {
+	opacity: 1;
+	visibility: visible;
+}
+.footer-menu .sub-menu li a {
+	display: block;
+	padding: 0.75rem 1.25rem;
+	color: #333;
+	text-decoration: none;
+	transition: background-color 0.2s ease;
+}
+.footer-menu .sub-menu li a:hover {
+	background-color: #0073aa;
+	color: #fff;
+}
