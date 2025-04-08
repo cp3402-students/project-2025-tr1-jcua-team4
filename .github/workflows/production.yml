@@ -81,3 +81,26 @@ jobs:
           local-dir: ./ # Folder to upload from
           server-dir: ./httpdocs/wp-content/themes/baizonntheme/ # Folder to upload to
           security: loose # Cloud access does not support SFTP/SSH until plan upgrade!
+
+      - name: Install WP Migrate DB Plugin on Staging
+        run: |
+          wp plugin install wp-migrate-db --activate --path=./httpdocs
+
+      - name: Export Database from Staging
+        run: |
+          wp migrate-db --export=/path/to/staging-dump.sql --path=./httpdocs
+
+      - name: Download Database from Staging
+        run: |
+          curl -O ftp://baizonnlearningcenter.cloudaccess.host/wp-content/uploads/backup/staging-dump.sql --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}
+
+      - name: Upload Database to Production
+        run: |
+          curl -T staging-dump.sql ftp://thebaizonnlearningcenter.cloudaccess.host/wp-content/uploads/backup/staging-dump.sql --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}
+
+      - name: Import Database to Production
+        run: |
+          wp db import ./httpdocs/wp-content/uploads/backup/staging-dump.sql --path=./httpdocs
+
+
+
