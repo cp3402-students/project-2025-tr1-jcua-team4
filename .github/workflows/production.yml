@@ -42,7 +42,7 @@ jobs:
         run: |
           issue_number=${{ steps.create_issue.outputs.issue_number }}
           echo "Waiting for approval on issue #$issue_number"
-          sleep 600
+          sleep 60
 
       - name: Check for Approval (Comment on Issue)
         id: check_approval
@@ -75,7 +75,7 @@ jobs:
         if: ${{ steps.check_approval.outcome == 'success' }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: https://thebaizonnlearningcenter.cloudaccess.host/
+          server: http://thebaizonnlearningcenter.cloudaccess.host/
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./ # Folder to upload from
