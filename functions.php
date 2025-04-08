@@ -23,6 +23,7 @@ if ( ! defined( 'BAIZONNTHEME_VERSION' ) ) {
 
 function baizonntheme_setup() {
     add_theme_support( 'title-tag' );
+    add_theme_support( 'align-wide' );
 
     register_nav_menus(
         array(
