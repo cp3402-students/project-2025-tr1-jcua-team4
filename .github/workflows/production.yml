@@ -1,0 +1,83 @@
+name: Deploy to Production
+
+on:
+  workflow_run:
+    workflows: [".github/workflows/deployment.yml"]
+    types:
+      - completed
+
+jobs:
+  deploy_production:
+    runs-on: ubuntu-latest
+    environment: Production
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create GitHub Issue for Approval
+        id: create_issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue_title = 'Approval Needed: Deploy to Production';
+            const issue_body = `
+              The staging deployment has been completed successfully. 
+              Please approve this deployment to proceed to production.
+            
+              To approve, add a comment with the word 'approved'.
+            `;
+            const new_issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: issue_title,
+              body: issue_body
+            });
+            console.log('Issue created:', new_issue.data.url);
+            return new_issue.data.number; # Return the issue number for later steps
+
+      - name: Wait for Approval
+        id: wait_for_approval
+        run: |
+          issue_number=${{ steps.create_issue.outputs.result }}
+          echo "Waiting for approval on issue #$issue_number"
+          sleep 600  # Wait for 10 minutes as an example (can be replaced with a more complex approval system)
+
+      - name: Check for Approval (Comment on Issue)
+        id: check_approval
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue_number = ${{ steps.create_issue.outputs.result }};
+            const issue = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number
+            });
+
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number
+            });
+
+            const approval_comment = comments.data.some(comment => comment.body.includes('approved'));
+
+            if (approval_comment) {
+              console.log('Approval received, proceeding with production deployment.');
+            } else {
+              console.log('Approval not received yet.');
+              exit 1;  # This will cause the workflow to stop if approval is not received
+            }
+
+      - name: Deploy to Production (FTP)
+        if: ${{ steps.check_approval.outcome == 'success' }}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: https://thebaizonnlearningcenter.cloudaccess.host/
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./ # Folder to upload from
+          server-dir: ./httpdocs/wp-content/themes/baizonntheme/ # Folder to upload to
+          security: loose # Cloud access does not support SFTP/SSH until plan upgrade!
