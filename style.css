@@ -1439,7 +1439,6 @@ textarea {
 	display: flex;
 	align-items: flex-start;
 	gap: 20px;
-	flex-wrap: wrap;
   }
   
   .fast-method .fast-image {
@@ -1447,4 +1446,6 @@ textarea {
 	height: auto;
 	border-radius: 10px;
   }
-  
+  .fast-method .fast-text {
+	flex: 1; /* To ensure that the text takes up available space */
+  }
