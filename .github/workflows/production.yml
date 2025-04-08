@@ -82,6 +82,12 @@ jobs:
           server-dir: ./httpdocs/wp-content/themes/baizonntheme/ # Folder to upload to
           security: loose # Cloud access does not support SFTP/SSH until plan upgrade!
 
+      - name: Install WP-CLI
+        run: |
+          curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          chmod +x wp-cli.phar
+          sudo mv wp-cli.phar /usr/local/bin/wp
+      
       - name: Install WP Migrate DB Plugin on Staging
         run: |
           wp plugin install wp-migrate-db --activate --path=./httpdocs
