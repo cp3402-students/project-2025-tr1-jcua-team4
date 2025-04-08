@@ -83,38 +83,38 @@ jobs:
           security: loose # Cloud access does not support SFTP/SSH until plan upgrade!
 
 
-      - name: Install WP-CLI
-        run: |
-          curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-          chmod +x wp-cli.phar
-          sudo mv wp-cli.phar /usr/local/bin/wp
+      # - name: Install WP-CLI
+      #   run: |
+      #     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+      #     chmod +x wp-cli.phar
+      #     sudo mv wp-cli.phar /usr/local/bin/wp
 
-      - name: List contents of httpdocs
-        run: |
-          ls -l ./httpdocs
+      # - name: List contents of httpdocs
+      #   run: |
+      #     ls -l ./httpdocs
 
-      - name: Install WP Migrate DB Plugin on Staging
-        run: |
-          cd ./httpdocs
-          wp plugin install wp-migrate-db --activate --path=./httpdocs
+      # - name: Install WP Migrate DB Plugin on Staging
+      #   run: |
+      #     cd ./httpdocs
+      #     wp plugin install wp-migrate-db --activate --path=./httpdocs
 
-      - name: Export Database from Staging
-        run: |
-          cd ./httpdocs
-          wp migrate-db --export=./httpdocs/wp-content/uploads/backup/staging-dump.sql --path=./httpdocs
+      # - name: Export Database from Staging
+      #   run: |
+      #     cd ./httpdocs
+      #     wp migrate-db --export=./httpdocs/wp-content/uploads/backup/staging-dump.sql --path=./httpdocs
 
-      - name: Download Database from Staging
-        run: |
-          curl -O ftp://baizonnlearningcenter.cloudaccess.host/wp-content/uploads/backup/staging-dump.sql --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}
+      # - name: Download Database from Staging
+      #   run: |
+      #     curl -O ftp://baizonnlearningcenter.cloudaccess.host/wp-content/uploads/backup/staging-dump.sql --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}
 
-      - name: Upload Database to Production
-        run: |
-          curl -T staging-dump.sql ftp://thebaizonnlearningcenter.cloudaccess.host/wp-content/uploads/backup/staging-dump.sql --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}
+      # - name: Upload Database to Production
+      #   run: |
+      #     curl -T staging-dump.sql ftp://thebaizonnlearningcenter.cloudaccess.host/wp-content/uploads/backup/staging-dump.sql --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}
 
-      - name: Import Database to Production
-        run: |
-          cd ./httpdocs
-          wp db import ./httpdocs/wp-content/uploads/backup/staging-dump.sql --path=./httpdocs
+      # - name: Import Database to Production
+      #   run: |
+      #     cd ./httpdocs
+      #     wp db import ./httpdocs/wp-content/uploads/backup/staging-dump.sql --path=./httpdocs
 
 
 
