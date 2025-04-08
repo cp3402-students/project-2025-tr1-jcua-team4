@@ -89,12 +89,18 @@ jobs:
           chmod +x wp-cli.phar
           sudo mv wp-cli.phar /usr/local/bin/wp
 
+      - name: List contents of httpdocs
+        run: |
+          ls -l ./httpdocs
+
       - name: Install WP Migrate DB Plugin on Staging
         run: |
+          cd ./httpdocs
           wp plugin install wp-migrate-db --activate --path=./httpdocs
 
       - name: Export Database from Staging
         run: |
+          cd ./httpdocs
           wp migrate-db --export=./httpdocs/wp-content/uploads/backup/staging-dump.sql --path=./httpdocs
 
       - name: Download Database from Staging
@@ -107,6 +113,7 @@ jobs:
 
       - name: Import Database to Production
         run: |
+          cd ./httpdocs
           wp db import ./httpdocs/wp-content/uploads/backup/staging-dump.sql --path=./httpdocs
 
 
