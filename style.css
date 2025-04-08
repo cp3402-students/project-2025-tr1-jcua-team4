@@ -1339,4 +1339,45 @@ textarea {
   .schedule-table tr:nth-child(even) {
 	background-color: #f9f9f9;
   }
+
+/* === Staff page === */
+  .teacher-profiles {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 2rem;
+  }
+  
+  .teacher {
+	display: flex;
+	flex-direction: row;
+	gap: 1.5rem;
+	background: #f9f9f9;
+	border-radius: 12px;
+	padding: 1.5rem;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+	align-items: flex-start;
+  }
+  
+  .teacher img {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 12px;
+	flex-shrink: 0;
+  }
+  
+  .teacher-info h3 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	color: #333;
+  }
+  
+  .teacher-info p {
+	margin: 0.25rem 0;
+	color: #444;
+	line-height: 1.6;
+  }
   
