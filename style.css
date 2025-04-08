@@ -1517,3 +1517,8 @@ textarea {
   margin-top: 2rem;
   border-radius: 8px;
 }
+
+.home main#primary {
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+}
