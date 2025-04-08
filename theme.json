@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "settings": {
+    "spacing": {
+      "padding": true,
+      "margin": true,
+      "blockGap": true,
+      "units": ["px", "em", "rem", "%", "vw", "vh"]
+    }
+  }
+}
