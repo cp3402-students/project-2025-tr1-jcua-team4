@@ -6,6 +6,10 @@
       "margin": true,
       "blockGap": true,
       "units": ["px", "em", "rem", "%", "vw", "vh"]
+    },
+    "layout": {
+      "contentSize": "800px",
+      "wideSize": "1200px"
     }
   }
 }
