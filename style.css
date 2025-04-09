@@ -1294,6 +1294,49 @@ textarea {
 	color: #fff;
 }
 
+.main-navigation ul ul,
+.footer-menu ul ul {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	display: none;
+	background-color: #fff;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	padding: 0;
+	min-width: 180px;
+	z-index: 999;
+}
+
+.main-navigation ul ul li,
+.footer-menu ul ul li {
+	display: block;
+	width: 100%;
+}
+
+.main-navigation ul li:hover > ul,
+.footer-menu ul li:hover > ul {
+	display: block;
+}
+
+.main-navigation ul ul a,
+.footer-menu ul ul a {
+	padding: 0.75rem 1rem;
+	display: block;
+	text-decoration: none;
+	color: #333;
+	white-space: nowrap;
+}
+
+.main-navigation ul ul a:hover,
+.footer-menu ul ul a:hover {
+	background-color: #f0f8ff;
+	color: #0073aa;
+}
+.main-navigation li,
+.footer-menu li {
+	position: relative;
+}
+
 /* === Schedule page === */
 .schedule-section {
 	font-family: 'Segoe UI', sans-serif;
