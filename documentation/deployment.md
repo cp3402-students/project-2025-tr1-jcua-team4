@@ -6,15 +6,24 @@ The following is a step-by-step guide outlining the development process,
 required tools, and future maintenance of the project.
 ___
 ## Table of Contents
+
 - [Setting up local development](#setting-up-local-development)
     - [Requirements](#requirements)
     - [Setting up WordPress locally](#setting-up-wordpress-locally)
     - [Setting up the theme](#setting-up-the-theme)
     - [Setting up Version Control](#setting-up-version-control)
-- [Staging workflow](#Staging workflow)
-    - [Setting up automated workflow](#setting-up-automated-workflow)
-- [Setting up live production](#setting-up-live-production)
-    - [Setting up workflow](#setting-up-workflow)
+
+- [Setting up Staging](#setting-up-staging)
+    - [Staging workflow](#staging-workflow)
+    - [Implementing And Testing A New Feature](#implementing-and-testing-a-new-feature)
+    - [Updating The Staging Cloud Access Username And Password Secrets](#updating-the-staging-cloud-access-username-and-password-secrets)
+    - [Changing Approval Sleep Timer](#changing-approval-sleep-timer)
+
+- [Setting up production](#setting-up-production)
+    - [Production workflow](#production-workflow)
+    - [Transferring Database Content (Pages, Posts, Media etc) From Staging To Production](#transferring-database-content-pages-posts-media-etc-from-staging-to-production)
+    - [Updating The Production Cloud Access Username And Password Secrets](#updating-the-production-cloud-access-username-and-password-secrets)
+
 - [Project management](#project-management)
     - [Requirements](#requirements-1)
     - [Communication](#communication)
@@ -74,10 +83,12 @@ Local development is done by using LocalWP and git. LocalWP is used to install W
 14. On GitHub create a pull request and merge the branch to main
 15. Repeat steps 6, 7 and 10–14 when adding new features or making changes to the theme files
 ___
-### Staging workflow
+## Setting up Staging
 Staging is set up in a server on cloud access.net.
 GitHub actions are used to automate the workflow
 and push the theme changes to WordPress upon merging and pushing to the main repository.
+
+### Staging workflow
 
 1. Ensure you have your PHP or VS code project set up with version control and a copy of the theme
 2. Make your desired changes to the project (for example, changing the header/footer colour)
@@ -140,36 +151,37 @@ In the event of a security breach you may want to reset the password
 
 
 
-### Production workflow
+## Setting up production
 Production is set up in a server on cloud access.net.
 GitHub actions are used to automate the workflow
 and push the theme changes to WordPress upon merging and pushing to the main repository.
-**IMPORTANT: Only commit pushes to the main branch will trigger the production workflow. This is for small changes. You may also wish to make a one character edit to simply trigger the production workflow**
+- **IMPORTANT: Only commit pushes to the main branch will trigger the production workflow. This is for small changes. You may also wish to make a one character edit to simply trigger the production workflow**
 
+### Production workflow
 
 1. Make any desired changes to the theme as you would similar to the staging workflow (ensure you are on the main branch)
 2. Navigate to the [GitHub Repository](https://github.com/cp3402-students/project-2025-tr1-jcua-team4.git)
-3. Go to the Issues section in the repository (you may to refresh the page after 5-15 seconds)
+3. Go to the Issues section in the repository (you may to refresh the page after 5–15 seconds)
 4. A new issue regarding **Approval Needed: Deploy To Production** should appear
 5. Click on the issue and immediately enter as exactly **approved** into the comment field, then press close with comment. **IMPORTANT: This needs to be done in a certain amount of time depending on the value of the sleep variable**
 6. Go to the production site and view your changes
-7. If change your mind about deploying to production, simply click close issue and the deploy to production workflow will fail
+7. If you change your mind about deploying to production, simply click close issue and the deployment to production workflow will fail
 
 
 ### Transferring Database Content (Pages, Posts, Media etc) From Staging To Production
 1. Open the admin interface in your [Staging website](https://baizonnlearningcenter.cloudaccess.host/wp-admin)
 2. Open the admin interface in your [Production website](https://thebaizonnlearningcenter.cloudaccess.host/wp-admin)
 3. Ensure you have [All-In-One WP Migration](https://wordpress.org/plugins/all-in-one-wp-migration/) plugin installed on both staging and production servers
-4. In your staging website on the left sidebar select the all in one plugin -> export
+4. In your staging website on the left sidebar, select the all-in-one plugin -> export
 5. Select export site to -> file
 6. Download the export file
-7. In your production website on the left sidebar select all in one plugin -> import
+7. In your production website on the left sidebar, select all in one plugin -> import
 8. Drag and drop the export file into the highlighted area
 9. Click proceed on the replace popup
 
 ### Updating The Production Cloud Access Username And Password Secrets
-In the event of a security breach you may want to reset the password
-1. Navigate to your main github repository page
+In the event of a security breach, you may want to reset the password
+1. Navigate to your main GitHub repository page
 2. Go to settings -> secrets and variables - actions
 3. In the **environment** secrets edit the values for FTP_USERNAME and FTP_PASSWORD
 ___
