@@ -36,6 +36,8 @@ Local development is done by using LocalWP and git. LocalWP is used to install W
 5. Head over to the WordPress Admin site 
 6. On the left menu go to Appearance > Themes 
 7. Select "baizonnthme" and click __activate__
+8. Go to plugin page and add new plugins
+9. Search and install __All In One Wp Migration__, __WP Forms__ and __Smart Slider__ plugins for site content.
 
 ### Setting up Version Control
 
@@ -56,11 +58,65 @@ Local development is done by using LocalWP and git. LocalWP is used to install W
 13. Commit the changes and push to remote on GitHub Desktop
 14. On GitHub create a pull request and merge the branch to main
 15. Repeat steps 6, 7 and 10–14 when adding new features or making changes to the theme files
-
+___
 ## Setting up staging
 Staging is set up in a server on cloud access.net.
 GitHub actions are used to automate the workflow
 and push the theme changes to WordPress upon merging and pushing to the main repository.
 
 ### Setting up automated workflow
+Add content...
+___
+## Setting up live production
+Live production is also set up in a server on cloud access.net.
+All in one wp migration plugin is used to move the site content + the databse to production
+
+### Setting up workflow
+Add content...
+___
+
+## Project management
+
+### Requirements
+- [Discord](https://discord.com/)
+  - [Slack](https://slack.com/) (Optional Alternative)
+- [Trello](https://trello.com/b/RZbbDeVJ/group-4-project)
+- [GitHub Desktop](https://desktop.github.com/download/)
+- [Git](https://git-scm.com/downloads)
+
+2–3 weekly face-to-face meet ups is recommended for this project, but online Discord meetings can be used as a backup.
+In these stand-up meetings, we discuss current tasks, roadblocks each team member had and assign new tasks.
+After the standup, discussing new ideas, working on tasks and testing different workflows and toos is also done.
+Trello was also used to break down large tasks in to smaller tasks
+and assign different team members to specific tasks.
+It was also used to keep a backlog of changes and future features and updates.
+Once the task was finished, it was moved to the done section on Trello.
+
+### Communication
+Outside of weekly meetings, The Main method of communication was done through discord.
+Slack was used as a backup.
+Discord was used as a platform to share links, organize weekly meetups, ask questions and stay on top of assigned tasks.
+
+### Project management workflow
+1. download and setup discord
+   - See discord documentation [here](https://discord.com/developers/docs/intro)
+   - Discord is recommended, but Slack can also be used
+2. Organize a time for a stand-up meeting on discord
+3. Have a stand-up meetings on discord or in person
+   - Discuss task progress and roadblocks 
+4. Add and assign tasks on trello to be completed by next meeting
+5. Create a new branch on GitHub Desktop
+   - see Steps 6 and 9 in [setting up version control section](#Setting up Version Control)
+6. Make any changes using PHP Storm
+7. On GitHub desktop write an appropriate commit message and commit and push the changes to GitHub
+8. On GitHub, create a pull request.
+9. Chat with your team on discord or in person and resolve any file conflicts 
+10. Once the conflicts are fixed (if there is any) merge branch with main
+11. If a new feature was added or a task was completed, update it on the trello board
+12. Make record of meeting activities and attendance
+    - it can be done on a text channel on discord 
+13. Organize the next meeting time and place
+14. Making changes directly is not recommended unless its small change
+    - Make sure to let the team members know if you are making changes directly to the main branch.
+
 
