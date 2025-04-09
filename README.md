@@ -8,9 +8,9 @@ Welcome to the project! This repository contains the source code and documentati
 - [Link to Discord Server](https://discord.gg/fE5SWfzQ)
 
 ## Documentation Files:
-- [site.md](site.md)
-- [theme.md](theme.md)
-- [deployment.md](deployment.md)
+- [site.md](documentation/site.md)
+- [theme.md](documentation/theme.md)
+- [deployment.md](documentation/deployment.md)
 
 ## Trello Board
 [Link to Trello Board](https://trello.com/b/RZbbDeVJ/group-4-project)- Use our Trello board to track tasks and progress.
