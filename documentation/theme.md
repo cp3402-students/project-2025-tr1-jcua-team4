@@ -76,4 +76,9 @@ and contains no unnecessary bloat, making it easy to customize and maintain.
 
 ### Theme design
 We wanted to create a simplistic, modern and a sleek website.
-The color palate for the website was based off of the site logo. The site uses sans-serif font which makes site content easy to read and scan.
+The color palate for the website was based off of the site logo.
+The site uses sans-serif font which makes site content easy to read and scan.
+The headings and text on the site are written appropriately with different colors and sizes
+that fit the overall theme of the website.
+All links are clearly styled to indicate interactivity,
+using appropriate colors to enhance accessibility.
