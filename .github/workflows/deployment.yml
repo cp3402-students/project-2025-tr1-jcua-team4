@@ -1,18 +1,18 @@
 on:
   push:
     branches:
-    - test
+    - main
     - release/*
 
   pull_request:
-    types: [opened, synchronize, closed]
+    types: [closed]
     branches:
-    - test
+    - main
     - release/*
      
 
 jobs:
- deploy_staging:
+  my_job:
     name: deploy to staging
     runs-on: ubuntu-latest
 
@@ -28,32 +28,6 @@ jobs:
           server: baizonnlearningcenter.cloudaccess.host
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./ # Folder to upload from (in this case our theme, workflow is in same folder as theme)
-          server-dir: ./httpdocs/wp-content/themes/baizonntheme/ # Folder to upload to
-          security: loose # Cloud access does not support SFTP/SSH until plan upgrade!
-
-
-# Reference: https://github.com/SamKirkland/FTP-Deploy-Action (SamKirkland, FTP-Deploy-Action)
-
-
-
- deploy_production:
-    name: deploy to production
-    runs-on: ubuntu-latest
-    needs: deploy_staging  # Ensures staging deployment finishes before production
-
-    steps:
-      - name: code checkout
-        uses: actions/checkout@v4
-
-# Reference: https://docs.github.com/en/actions
-
-      - name: FTP Deploy To CloudAccess Host.net
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: baizonn-learning-center.cloudaccess.host
-          username: ${{ secrets.FTP_PROD_USERNAME }}
-          password: ${{ secrets.FTP_PROD_PASSWORD }}
           local-dir: ./ # Folder to upload from (in this case our theme, workflow is in same folder as theme)
           server-dir: ./httpdocs/wp-content/themes/baizonntheme/ # Folder to upload to
           security: loose # Cloud access does not support SFTP/SSH until plan upgrade!
