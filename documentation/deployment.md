@@ -61,7 +61,7 @@ Local development is done by using LocalWP and git. LocalWP is used to install W
 6. On the left menu go to Appearance > Themes
 7. Select "baizonnthme" and click __activate__
 8. Go to plugin page and add new plugins
-9. Search and install __All In One Wp Migration__, __WP Forms__ and __Smart Slider__ plugins for site content.
+9. Search and install __All In One Wp Migration__ for site migration and __WP Forms__ and __Smart Slider__ plugins for site content.
 
 ### Setting up Version Control
 
@@ -157,7 +157,7 @@ GitHub actions are used to automate the workflow
 and push the theme changes to WordPress upon merging and pushing to the main repository.
 - **IMPORTANT: Only commit pushes to the main branch will trigger the production workflow. This is for small changes. You may also wish to make a one character edit to simply trigger the production workflow**
 
-### Production workflow
+### Live Production workflow
 
 1. Make any desired changes to the theme as you would similar to the staging workflow (ensure you are on the main branch)
 2. Navigate to the [GitHub Repository](https://github.com/cp3402-students/project-2025-tr1-jcua-team4.git)
@@ -217,7 +217,7 @@ Discord was used as a platform to share links, organize weekly meetups, ask ques
     - Discuss task progress and roadblocks
 4. Add and assign tasks on trello to be completed by next meeting
 5. Create a new branch on GitHub Desktop
-    - see Steps 6 and 9 in [setting up version control section](#Setting up Version Control)
+    - see Steps 6 and 9 in [setting up version control section](#Setting-up-Version-Control)
 6. Make any changes using PHP Storm
 7. On GitHub desktop write an appropriate commit message and commit and push the changes to GitHub
 8. On GitHub, create a pull request.
