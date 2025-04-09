@@ -29,7 +29,7 @@ Outlines the structure and design of the custom WordPress theme `baizonntheme`, 
 Provides a step-by-step guide for setting up local development with LocalWP and Git, managing version control with GitHub Desktop, and deploying to staging and production environments. Includes project management workflows and tools used.
 
 ### [`site.md`](documentation/site.md) – Site Content
-Add content...
+The site.md file is a guide for maintaining a WordPress site using the "baizonntheme" theme. It covers local development, adding and editing content, customizing design, and updating the live site through the deployment workflow.
 
 ---
 

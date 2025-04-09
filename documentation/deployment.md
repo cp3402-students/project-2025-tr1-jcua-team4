@@ -6,30 +6,26 @@ The following is a step-by-step guide outlining the development process,
 required tools, and future maintenance of the project.
 ___
 ## Table of Contents
-
 - [Setting up local development](#setting-up-local-development)
     - [Requirements](#requirements)
     - [Setting up WordPress locally](#setting-up-wordpress-locally)
     - [Setting up the theme](#setting-up-the-theme)
     - [Setting up Version Control](#setting-up-version-control)
-
 - [Setting up Staging](#setting-up-staging)
     - [Staging workflow](#staging-workflow)
-    - [Implementing And Testing A New Feature](#implementing-and-testing-a-new-feature)
-    - [Updating The Staging Cloud Access Username And Password Secrets](#updating-the-staging-cloud-access-username-and-password-secrets)
+    - [Implementing and Testing a New Feature](#implementing-and-testing-a-new-feature)
+    - [Updating the Staging Cloud Access Username and Password Secrets](#updating-the-staging-cloud-access-username-and-password-secrets)
     - [Changing Approval Sleep Timer](#changing-approval-sleep-timer)
-
 - [Setting up production](#setting-up-production)
-    - [Production workflow](#production-workflow)
-    - [Transferring Database Content (Pages, Posts, Media etc) From Staging To Production](#transferring-database-content-pages-posts-media-etc-from-staging-to-production)
-    - [Updating The Production Cloud Access Username And Password Secrets](#updating-the-production-cloud-access-username-and-password-secrets)
-    
+    - [Live Production workflow](#live-production-workflow)
+    - [Transferring Database Content From Staging To Production](#transferring-database-content-from-staging-to-production)
+    - [Updating the Production Cloud Access Username and Password Secrets](#updating-the-production-cloud-access-username-and-password-secrets)
 - [Testing the theme](#testing-the-theme)
-
 - [Project management](#project-management)
-    - [Requirements](#requirements-1)
+    - [Requirements](#requirements)
     - [Communication](#communication)
     - [Project management workflow](#project-management-workflow)
+
 
 ## Setting up local development
 ___
@@ -123,7 +119,7 @@ For adding a feature which may constitute adding another branch.
      - main
        - release/*
 
-7. In your new branch make any desired changes
+7. In your new branch, make any desired changes
 8. Commit your changes (refer to staging workflow -> step 4)
 9. Navigate to the [GitHub Repository](https://github.com/cp3402-students/project-2025-tr1-jcua-team4.git) and switch the branch to your recently created branch
 10. Go to pull requests -> New pull request -> Select main and your new branch to compare and select create pull request
@@ -170,7 +166,7 @@ and push the theme changes to WordPress upon merging and pushing to the main rep
 7. If you change your mind about deploying to production, simply click close issue and the deployment to production workflow will fail
 
 
-### Transferring Database Content (Pages, Posts, Media etc) From Staging To Production
+### Transferring Database Content From Staging To Production
 1. Open the admin interface in your [Staging website](https://baizonnlearningcenter.cloudaccess.host/wp-admin)
 2. Open the admin interface in your [Production website](https://thebaizonnlearningcenter.cloudaccess.host/wp-admin)
 3. Ensure you have [All-In-One WP Migration](https://wordpress.org/plugins/all-in-one-wp-migration/) plugin installed on both staging and production servers
