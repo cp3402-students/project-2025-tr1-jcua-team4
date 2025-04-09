@@ -137,7 +137,7 @@ In the event of a security breach you may want to reset the password
 
 
 ### Changing Approval Sleep Timer
-1. In your PHPStorm theme project navigate to the root filename -> .github -> workflows -> production.yml
+1. In your PHPStorm theme project, navigate to the root filename -> .GitHub -> workflows -> production.yml
 2. Find the
    ```
    - name: Wait for Approval
@@ -228,6 +228,6 @@ Discord was used as a platform to share links, organize weekly meetups, ask ques
     - it can be done on a text channel on discord
 13. Organize the next meeting time and place
 14. Making changes directly is not recommended unless its small change
-    - Make sure to let the team members know if you are making changes directly to the main branch.
+    - Make sure to let the team members know if you are making changes directly to the main branch so they can fetch before pulling any changes
 
 
