@@ -1048,6 +1048,17 @@ textarea {
 	width: 100%;
 }
 
+.dropdown-arrow {
+	font-size: 0.75em;
+	margin-left: 5px;
+	color: #0073aa;
+	transition: transform 0.3s ease;
+}
+
+.menu-item-has-children:hover .dropdown-arrow {
+	transform: rotate(180deg); /* Optional animation on hover */
+}
+
 /* === Footer === */
 .site-footer {
 	background-color: #e6f7fa; /* light blue to match header */
@@ -1564,3 +1575,4 @@ textarea {
 	padding-top: 0 !important;
 	margin-top: 0 !important;
 }
+
