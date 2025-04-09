@@ -23,6 +23,8 @@ ___
     - [Production workflow](#production-workflow)
     - [Transferring Database Content (Pages, Posts, Media etc) From Staging To Production](#transferring-database-content-pages-posts-media-etc-from-staging-to-production)
     - [Updating The Production Cloud Access Username And Password Secrets](#updating-the-production-cloud-access-username-and-password-secrets)
+    
+- [Testing the theme](#testing-the-theme)
 
 - [Project management](#project-management)
     - [Requirements](#requirements-1)
@@ -184,7 +186,23 @@ In the event of a security breach, you may want to reset the password
 1. Navigate to your main GitHub repository page
 2. Go to settings -> secrets and variables - actions
 3. In the **environment** secrets edit the values for FTP_USERNAME and FTP_PASSWORD
+
+## Testing the theme
+
+To ensure the `baizonntheme` works reliably across a wide range of content types and edge cases, we used the official [WordPress Theme Unit Test Data](https://codex.wordpress.org/Theme_Unit_Test). This XML file simulates a typical WordPress site by importing a variety of posts, categories, menus, and comment scenarios.
+
+1. The XML test data was imported via the **WordPress Importer** plugin from the **Tools > Import** menu.
+2. After import, we thoroughly checked theme compatibility by reviewing:
+   - Post layouts (including images, quotes, galleries, and videos)
+   - Menu structures with submenus and custom links
+   - Widgets and sidebars on various templates
+   - Comment threading and formatting
+   - Responsive behaviour across devices using dev tools
+   - Edge cases like extremely long titles, missing featured images, and nested HTML
+
+This testing allowed us to catch potential layout issues early and ensured the theme gracefully handles real-world content structures. All identified layout or formatting problems were fixed prior to deployment.
 ___
+
 
 ## Project management
 
@@ -217,7 +235,7 @@ Discord was used as a platform to share links, organize weekly meetups, ask ques
     - Discuss task progress and roadblocks
 4. Add and assign tasks on trello to be completed by next meeting
 5. Create a new branch on GitHub Desktop
-    - see Steps 6 and 9 in [setting up version control section](#Setting-up-Version-Control)
+     - see Steps 6 and 9 in [setting up version control section](#Setting-up-Version-Control)
 6. Make any changes using PHP Storm
 7. On GitHub desktop write an appropriate commit message and commit and push the changes to GitHub
 8. On GitHub, create a pull request.
@@ -229,5 +247,3 @@ Discord was used as a platform to share links, organize weekly meetups, ask ques
 13. Organize the next meeting time and place
 14. Making changes directly is not recommended unless its small change
     - Make sure to let the team members know if you are making changes directly to the main branch so they can fetch before pulling any changes
-
-
