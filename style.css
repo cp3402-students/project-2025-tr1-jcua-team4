@@ -1298,6 +1298,9 @@ textarea {
 	color: #333;
 	text-decoration: none;
 	transition: background-color 0.2s ease;
+	white-space: normal; 
+	word-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
 .main-navigation .sub-menu li a:hover {
