@@ -4,6 +4,21 @@ The purpose of this document is to describe the development and deployment workf
 to successfully create, test, and deploy updates to our custom theme, "baizonntheme".
 The following is a step-by-step guide outlining the development process,
 required tools, and future maintenance of the project.
+___
+## Table of Contents
+- [Setting up local development](#setting-up-local-development)
+    - [Requirements](#requirements)
+    - [Setting up WordPress locally](#setting-up-wordpress-locally)
+    - [Setting up the theme](#setting-up-the-theme)
+    - [Setting up Version Control](#setting-up-version-control)
+- [Setting up staging](#setting-up-staging)
+    - [Setting up automated workflow](#setting-up-automated-workflow)
+- [Setting up live production](#setting-up-live-production)
+    - [Setting up workflow](#setting-up-workflow)
+- [Project management](#project-management)
+    - [Requirements](#requirements-1)
+    - [Communication](#communication)
+    - [Project management workflow](#project-management-workflow)
 
 ## Setting up local development
 ___

@@ -3,6 +3,18 @@
 The purpose of this document is to provide developers with essential information for continuing the development of the theme. It outlines key features, file structure, design decisions, color schemes, and guidance on which files to modify.
 ___
 
+## Table of Contents
+- [Overview of The theme](#overview-of-the-theme)
+- [Theme Features](#theme-features)
+  - [Core Features](#core-features)
+  - [Design & Layout](#design--layout)
+  - [Page-Specific Styling](#page-specific-styling)
+  - [Block Editor Enhancements](#block-editor-enhancements)
+  - [Easy access for developers](#easy-access-for-developers)
+- [Theme design](#theme-design)
+
+___
+
 ### Overview of The theme
 Baizonntheme was developed specifically for Baizonn Learning Center with the goal of increasing student enrollment in their Maths and Science programs.
 
