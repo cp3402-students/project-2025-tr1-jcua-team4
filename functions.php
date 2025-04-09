@@ -269,3 +269,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function baizonn_add_dropdown_arrow($item_output, $item, $depth, $args) {
+    if (in_array('menu-item-has-children', $item->classes)) {
+        $arrow = '<span class="dropdown-arrow"> ▼</span>';
+        $item_output = str_replace('</a>', $arrow . '</a>', $item_output);
+    }
+    return $item_output;
+}
+add_filter('walker_nav_menu_start_el', 'baizonn_add_dropdown_arrow', 10, 4);
