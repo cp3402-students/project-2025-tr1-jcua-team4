@@ -981,7 +981,7 @@ textarea {
 
 /* === Site Header === */
 .site-header {
-	background: linear-gradient(135deg, #f8f9fa, #b8e6ea);
+	background: linear-gradient(135deg, #f8f9fa, #c81c1c);
 	padding: 1.5rem 0;
 	border-bottom: 2px solid #0073aa;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
