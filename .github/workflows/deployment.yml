@@ -2,14 +2,12 @@ on:
   push:
     branches:
     - main
-    - change-header-colour
     - release/*
 
   pull_request:
     types: [closed]
     branches:
     - main
-    - change-header-colour
     - release/*
      
 
