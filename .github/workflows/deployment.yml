@@ -2,12 +2,14 @@ on:
   push:
     branches:
     - main
+    - pre-demo-test-run
     - release/*
 
   pull_request:
     types: [closed]
     branches:
     - main
+    - pre-demo-test-run
     - release/*
      
 
